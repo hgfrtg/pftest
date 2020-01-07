@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :audio %>
+    <%= form.file_field :audio ,accept:'audio/mp3' %>
+  </div>
+
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :audio %>
-    <%= form.file_field :audio ,accept:'audio/mp3' %>
+    <%= form.label :introduction %>
+    <%= form.text_area :introduction %>
   </div>
 
   <div class="actions">
