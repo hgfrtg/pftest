@@ -6,8 +6,19 @@
 </p>
 
 <p>
+  <strong>Introduction:</strong>
+  <%= @music.introduction %>
+</p>
+
+<p>
   <strong>Audio:</strong>
   <%= audio_tag @music.audio %>
+</p>
+
+
+<p>
+  <strong>投稿日時:</strong>
+  <%= @music.created_at.to_s(:datetime_jp) %>
 </p>
 
 <%= link_to 'Edit', edit_music_path(@music) %> |
