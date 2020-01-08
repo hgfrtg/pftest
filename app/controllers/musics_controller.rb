@@ -19,6 +19,9 @@ class MusicsController < ApplicationController
 
   # GET /musics/1/edit
   def edit
+    if current_user.id != @music.user_id
+       redirect_to musics_path
+    end
   end
 
   # POST /musics
