@@ -17,6 +17,7 @@
   <tbody>
     <% @musics.each do |music| %>
       <tr>
+        <td><%= attachment_image_tag(music.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
         <td><%= music.user.name %></td>
         <td><%= music.title %></td>
         <td><%= audio_tag music.audio %></td>
