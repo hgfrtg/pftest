@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>投稿者</th>
       <th>Title</th>
       <th>Audio</th>
       <th>introduction</th>
@@ -16,9 +17,10 @@
   <tbody>
     <% @musics.each do |music| %>
       <tr>
+        <td><%= music.user.name %></td>
         <td><%= music.title %></td>
         <td><%= audio_tag music.audio %></td>
-        <td><%= music.introduction %></td>
+        <td><%= music.description %></td>
         <td><%= music.created_at.to_s(:datetime_jp) %></td>
         <td><%= link_to 'Show', music %></td>
         <td><%= link_to 'Edit', edit_music_path(music) %></td>
