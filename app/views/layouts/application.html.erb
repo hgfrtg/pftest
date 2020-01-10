@@ -10,15 +10,17 @@
   </head>
 
   <body>
-        <header>
+    <header>
         <nav>
         <% if user_signed_in? %>
+        <%= link_to 'ホーム', root_path %>
+            <%= link_to 'マイページ', user_path(current_user.id) %>
             <%= link_to 'edit profile', edit_user_registration_path %>
             <%= link_to 'logout', destroy_user_session_path, method: :delete %>
         <% else %>
             <%= link_to 'registration', new_user_registration_path %>
             <%= link_to 'login', new_user_session_path %>
-            <% end %>
+        <% end %>
         </nav>
     </header>
 
