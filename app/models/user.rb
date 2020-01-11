@@ -17,6 +17,7 @@
 #  sign_in_count          :integer          default(0), not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  profile_image_id       :string
 #
 # Indexes
 #
@@ -30,5 +31,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+	attachment :profile_image
 	has_many :musics, dependent: :destroy
 end

@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
+    <h1>User Info</h1>
+      <div>
 
-<h1>Musics</h1>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th></th>
+            <th><%= attachment_image_tag(@user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></th>
+         </tr>
+          <tr>
+            <th>name</th>
+            <th><%= @user.name %></th>
+         </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= @user.introduction %></th>
+          </tr>
 
-<table>
-  <thead>
-    <tr>
-      <th>投稿者</th>
-      <th>Title</th>
-      <th>Audio</th>
-      <th>introduction</th>
-      <th>投稿日時</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @musics.each do |music| %>
       <tr>
-        <td><%= attachment_image_tag(music.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
-        <td><%= music.user.name %></td>
         <td><%= music.title %></td>
         <td><%= audio_tag music.audio %></td>
         <td><%= music.description %></td>
@@ -27,15 +27,12 @@
         <td><%= link_to 'Edit', edit_music_path(music) %></td>
         <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+       <% end %>
 
-<br>
+        </tbody>
+      </table>
 
-<%= link_to 'New Music', new_music_path %>
-
-<script>
+      <script>
   audiojs.events.ready(function() {
     var as = audiojs.createAll();
   });
