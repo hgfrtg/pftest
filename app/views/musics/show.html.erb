@@ -6,6 +6,7 @@
     <%= render 'music',{music: @music} %>
 
     <table class="show-tb comment_<%= @music.id %>">
+    	<td>コメント数：<%= @music.music_comments.count %></td>
       <%= render 'comment', music_comments: @music.music_comments %>
     </table>
     <div class="comment-form">
