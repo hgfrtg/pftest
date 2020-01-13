@@ -1,28 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+<div class="row">
 
-<p>
-  <strong>Title:</strong>
-  <%= @music.title %>
-</p>
+<div class="col-md-8">
+    <%= render 'music',{music: @music} %>
+</div>
 
-<p>
-  <strong>Introduction:</strong>
-  <%= @music.description %>
-</p>
-
-<p>
-  <strong>Audio:</strong>
-  <%= audio_tag @music.audio %>
-</p>
-
-
-<p>
-  <strong>投稿日時:</strong>
-  <%= @music.created_at.to_s(:datetime_jp) %>
-</p>
-
-<%= link_to 'Edit', edit_music_path(@music) %> |
-<%= link_to 'Back', musics_path %>
+  <div class="col-md-4">
+    <%= render 'users/info',{user: @user} %>
+  </div>
+</div>
+</div>
 
 <script>
   audiojs.events.ready(function() {
