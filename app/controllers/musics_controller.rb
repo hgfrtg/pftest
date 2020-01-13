@@ -11,6 +11,7 @@ class MusicsController < ApplicationController
   # GET /musics/1.json
   def show
     @user = @music.user
+    @music_comment = MusicComment.new
   end
 
   # GET /musics/new

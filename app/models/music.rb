@@ -20,4 +20,5 @@ class Music < ApplicationRecord
 
 	belongs_to :user
 	validates :title, :audio, :presence => true
+	has_many :music_comments
 end
