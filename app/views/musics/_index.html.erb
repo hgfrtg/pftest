@@ -1,0 +1,25 @@
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>投稿者</th>
+          <th>Title</th>
+          <th>Audio</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% musics.each do |music| %>
+          <tr>
+            <td><%= attachment_image_tag(music.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
+            <td><%= link_to music.user.name, user_path(music.user) %></td>
+            <td><%= link_to music.title, music %></td>
+            <td><%= audio_tag music.audio %></td>
+            <td><%= link_to 'Show', music %></td>
+            <td><%= link_to 'Edit', edit_music_path(music) %></td>
+            <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>

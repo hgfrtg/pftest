@@ -10,6 +10,7 @@ class MusicsController < ApplicationController
   # GET /musics/1
   # GET /musics/1.json
   def show
+    @user = @music.user
   end
 
   # GET /musics/new
