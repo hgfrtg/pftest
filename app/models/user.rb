@@ -33,4 +33,5 @@ class User < ApplicationRecord
 
 	attachment :profile_image
 	has_many :musics, dependent: :destroy
+	has_many :music_comments
 end

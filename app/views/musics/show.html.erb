@@ -4,6 +4,16 @@
 
 <div class="col-md-8">
     <%= render 'music',{music: @music} %>
+
+    <table class="show-tb comment_<%= @music.id %>">
+      <%= render 'comment', music_comments: @music.music_comments %>
+    </table>
+    <div class="comment-form">
+      <%= form_with model:[@music, @music_comment], data: {remote: true} do |f| %>
+        <%= f.text_area :comment, size: "90x5" %>
+        <%= f.submit '送信' %>
+      <% end %>
+    </div>
 </div>
 
   <div class="col-md-4">
