@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_095153) do
+ActiveRecord::Schema.define(version: 2020_01_14_125317) do
 
   create_table "music_comments", force: :cascade do |t|
     t.text "comment"
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 2020_01_13_095153) do
   end
 
   create_table "musics", force: :cascade do |t|
-    t.integer "user_id"
     t.string "title", null: false
     t.string "audio", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["user_id"], name: "index_musics_on_user_id"
   end
 
