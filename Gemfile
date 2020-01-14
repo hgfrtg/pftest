@@ -70,3 +70,9 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'audiojs-rails'
 gem 'devise'
+
+
+
+group :production do
+  gem 'mysql2'
+end
