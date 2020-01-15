@@ -16,9 +16,8 @@
       </table>
 
       <% if user == current_user %>
-     <%= link_to '',edit_user_path(current_user.id),class: "btn btn-block btn-default glyphicon glyphicon-wrench edit_user_#{current_user.id}" %>
+      <button type="button" class="btn btn-outline-secondary btn-block">
+        <%= link_to 'ユーザー編集',edit_user_path(current_user.id) %>
+      </button>
      <% end %>
-
-
-
 
