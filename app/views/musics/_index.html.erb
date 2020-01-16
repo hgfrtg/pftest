@@ -18,6 +18,15 @@
             <td><%= link_to music.user.name, user_path(music.user) %></td>
             <td><%= link_to music.title, music %></td>
             <td><%= audio_tag music.audio %></td>
+
+                    <!-- いいね機能 -->
+                <% if user_signed_in? %>
+                  <div class="favorite-zone">
+                    <td><%= render 'musics/like', music: music%></td>
+                  </div>
+                <% end %>
+
+
             <td>コメント数：<%= music.music_comments.count %></td>
             </tr>
             <tr>
