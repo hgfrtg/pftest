@@ -1,0 +1,2 @@
+$("textarea").val("");
+$(".comment_<%= @music.id %>").html("<%= j(render 'musics/comment', music_comments: @music.music_comments ) %>");
