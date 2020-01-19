@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'musics#index'
   resources :musics do
-  	resources :music_comments, only: [:create, :destroy]
+  	resource :music_comments, only: [:create, :destroy]
   	resource :favorites, only: [:create, :destroy]
   end
   resources :users, only:[:index, :show, :update, :edit]
