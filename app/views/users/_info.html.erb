@@ -30,3 +30,8 @@
       </button>
      <% end %>
 
+     <!-- チャット機能リンク -->
+     <% if current_user != user %>
+      <%= link_to 'チャットを始める', chat_path(user.id) %>
+     <% end %>
+
