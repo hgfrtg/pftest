@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'musics#index'
+  get '/search', to: 'search#search'
   resources :musics do
   	resource :music_comments, only: [:create, :destroy]
   	resource :favorites, only: [:create, :destroy]

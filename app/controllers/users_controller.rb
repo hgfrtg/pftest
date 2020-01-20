@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   	@musics = @user.musics
   end
 
+  def index
+    @users = User.all
+  end
+
   def edit
     @user = User.find(params[:id])
     if current_user.id != @user.id
