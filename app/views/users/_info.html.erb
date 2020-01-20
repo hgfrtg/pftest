@@ -12,6 +12,15 @@
             <th>introduction</th>
             <th><%= user.introduction %></th>
           </tr>
+
+          <tr>
+            <th>フォローしている</th>
+            <th><%= link_to "#{user.followings.count} フォロー", followings_user_path(user) %></th>
+          </tr>
+          <tr>
+            <th>フォローされている</th>
+            <th><%= link_to "#{user.followers.count} フォロー", followers_user_path(user) %></th>
+          </tr>
         </tbody>
       </table>
 
