@@ -35,6 +35,7 @@ class User < ApplicationRecord
 	has_many :musics, dependent: :destroy
 	has_many :music_comments, dependent: :destroy
 	has_many :favorites, dependent: :destroy
+  has_many :clips, dependent: :destroy
 
   # チャット機能
   has_many :user_rooms

@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :musics do
   	resource :music_comments, only: [:create, :destroy]
   	resource :favorites, only: [:create, :destroy]
+    post 'add' => 'clips#create'
+    delete '/add' => 'clips#destroy'
   end
+  resources :clips, only: [:index]
   resources :relationships, only: [:index, :create, :destroy]
   resources :users, only:[:index, :show, :update, :edit] do
   	member do

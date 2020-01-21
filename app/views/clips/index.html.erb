@@ -1,0 +1,8 @@
+  <h2>お気に入りリスト</h2>
+    <% @clips.each do |clip| %>
+      <% music = Music.find(clip.music_id) %>
+            <div class="name3"><%= link_to music.title, music_path(music) %></div>
+            <div class="name2"><%= link_to "お気に入り解除",music_add_path(music),method: :delete %></div>
+    <br />
+    <% end %>
+</div>
