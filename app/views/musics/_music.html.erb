@@ -1,4 +1,9 @@
 <p>
+  <strong>イメージ:</strong>
+  <%= attachment_image_tag music, :jacket_image, :fill, 100, 100, format:'jpeg', class: "pull-left jacket_image_id", fallback: "no_image.jpg" %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= music.title %>
 </p>

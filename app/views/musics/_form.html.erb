@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+        <%= form.label :image %><br />
+      <%= form.attachment_field :jacket_image ,class: "music_image" %>
+  </div>
+
+  <div class="field">
     <%= form.label :audio %>
     <%= form.file_field :audio ,accept:'audio/mp3' %>
   </div>

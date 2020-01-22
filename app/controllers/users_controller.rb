@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
   	@musics = @user.musics
+    @musics = @musics.page(params[:page])
   end
 
   def index
@@ -32,12 +33,14 @@ class UsersController < ApplicationController
   def followings
     @user = User.find(params[:id])
     @users = @user.followings
+    @users = @users.page(params[:page])
     render 'show_follow'
   end
 
   def followers
     @user = User.find(params[:id])
     @users = @user.followers
+    @users = @users.page(params[:page])
     render 'show_follower'
   end
 

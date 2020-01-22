@@ -1,0 +1,19 @@
+<div class="card-columns">
+
+
+      <% musics.each do |music| %>
+  <div class="card">
+    <div class="card-header">
+      <%= audio_tag music.audio %>
+      <%= link_to music.title, music %>
+    </div>
+    <div class="card-img-top" src="..." alt="Card image cap">
+      <%= attachment_image_tag(music.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= music.description %></p>
+    </div>
+  </div>
+
+<% end %>
+</div>
