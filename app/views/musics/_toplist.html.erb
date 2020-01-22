@@ -7,8 +7,9 @@
       <%= audio_tag music.audio %>
       <%= link_to music.title, music %>
     </div>
-    <div class="card-img-top" src="..." alt="Card image cap">
-      <%= attachment_image_tag(music.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %>
+    <div class="card img-thumbnail">
+    <img class="card-img-top"  <%= attachment_image_tag(music, :jacket_image, :fill, 200, 150, fallback: "no_image.jpg") %>
+
     </div>
     <div class="card-body">
       <p class="card-text"><%= music.description %></p>

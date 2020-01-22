@@ -13,7 +13,14 @@
     <header>
       <%= render 'layouts/header' %>
     </header>
+    <%= render 'layouts/flash' %>
 
+    <div class="container-fluid" style="background-color: #f8f8f8;">
     <%= yield %>
+    </div>
+
+    <footer class="footer bg-dark">
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>

@@ -1,16 +1,27 @@
-<div class="container">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">トップ</li>
+  </ol>
+</nav>
 
-    <p id="notice"><%= notice %></p>
+
+<div class="container" style="background-color: orange;">
+
 
     <h1>Musics</h1>
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-9 align-self-center" style="background-color: red;">
       <%= render 'musics/toplist', musics: @musics%>
   </div>
 
+
+
+    <div class="col-md-3" style="background-color: blue;">
+<!--       <div class="row"> -->
+      <%= render 'layouts/search_form' %>
+      </div>
+    <!-- </div> -->
   </div>
-    <div class="col-md-4">
-    </div>
 
 </div>
 
