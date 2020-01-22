@@ -1,4 +1,14 @@
-    <h1>User Info</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to 'トップ', root_path %></li>
+    <li class="breadcrumb-item"><%= link_to 'ユーザー', users_path %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @user.name %></li>
+  </ol>
+</nav>
+
+
+
+
 <div class="container">
   <p id="notice"><%= notice %></p>
 <div class="row">

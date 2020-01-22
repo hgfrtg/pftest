@@ -13,9 +13,11 @@
             <th><%= user.introduction %></th>
           </tr>
 
+　　　　　<% if user == current_user %>
           <tr>
             <th><%= link_to "お気に入り楽曲", clips_path(user) %></th>
           </tr>
+          <% end %>
 
           <tr>
             <th>フォローしている</th>

@@ -18,6 +18,7 @@
 
 class Music < ApplicationRecord
 	mount_uploader :audio, AudioUploader
+	attachment :jacket_image
 
 	belongs_to :user
 	validates :title, :audio, :presence => true
