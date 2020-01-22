@@ -71,6 +71,7 @@ gem 'carrierwave'
 gem 'audiojs-rails'
 gem 'devise'
 gem "font-awesome-rails"
+gem 'kaminari'
 
 
 

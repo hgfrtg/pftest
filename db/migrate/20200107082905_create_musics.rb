@@ -4,6 +4,7 @@ class CreateMusics < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.string :audio, null: false
       t.text :description
+      t.string :jacket_image_id
 
       t.timestamps
     end

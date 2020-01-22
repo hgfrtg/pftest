@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_01_21_082806) do
     t.string "title", null: false
     t.string "audio", null: false
     t.text "description"
+    t.string "jacket_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
