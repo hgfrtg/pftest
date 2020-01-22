@@ -22,6 +22,7 @@ class Music < ApplicationRecord
 	validates :title, :audio, :presence => true
 	has_many :music_comments, dependent: :delete_all
 	has_many :favorites, dependent: :destroy
+	has_many :clips, dependent: :destroy
 	def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
     end

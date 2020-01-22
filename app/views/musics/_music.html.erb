@@ -27,6 +27,13 @@
           <div class="favorite-zone">
             <%= render 'musics/like', music: music%>
           </div>
+          <div class="clip-zone">
+                <% if !Clip.exists?(user_id:current_user.id,music_id:music.id) %>
+                <%= link_to "お気に入り",music_add_path(music),method: :post %>
+                <% else %>
+                <%= link_to "お気に入り解除",music_add_path(music),method: :delete %>
+                <% end %>
+           </div>
         <% end %>
 
 

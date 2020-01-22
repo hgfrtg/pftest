@@ -14,6 +14,10 @@
           </tr>
 
           <tr>
+            <th><%= link_to "お気に入り楽曲", clips_path(user) %></th>
+          </tr>
+
+          <tr>
             <th>フォローしている</th>
             <th><%= link_to "#{user.followings.count} フォロー", followings_user_path(user) %></th>
           </tr>
