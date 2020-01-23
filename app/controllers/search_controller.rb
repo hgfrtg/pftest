@@ -4,8 +4,7 @@ class SearchController < ApplicationController
 	@model = params["search"]["model"]
 	@content = params["search"]["content"]
 	@method = params["search"]["method"]
-	@records = search_for(@model, @content, @method)
-	@records = @records.page(params[:page])
+	@records = search_for(@model, @content, @method).page(params[:page])
 	end
 
 	private

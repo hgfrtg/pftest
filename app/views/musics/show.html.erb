@@ -13,27 +13,27 @@
   <p id="notice"><%= notice %></p>
 <div class="row">
 
-<div class="col-md-9">
+<div class="col-md-8">
     <%= render 'music',{music: @music} %>
 
-    <table class="show-tb comment_<%= @music.id %>">
+    <table class="show-tb comment_<%= @music.id %> mt-2">
     	<td>コメント数：<%= @music.music_comments.count %></td>
       <%= render 'comment', music_comments: @music.music_comments %>
     </table>
 
   <% if user_signed_in? %>
-    <div class="comment-form">
+    <div class="comment-form mb-5">
       <%= form_with model:[@music, @music_comment], data: {remote: true} do |f| %>
-        <%= f.text_area :comment, size: "90x5" %>
+        <%= f.text_area :comment, size: "60x5" %><br>
         <%= f.submit '送信' %>
       <% end %>
     </div>
   <% end %>
 </div>
 
-  <div class="col-md-3">
+  <div class="col-md-4">
+    <%= render 'layouts/search_form' %>
     <%= render 'users/info',{user: @user} %>
-    <%= render 'relationships/follow_button', user: @user %>
   </div>
 </div>
 </div>

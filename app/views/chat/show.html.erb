@@ -1,15 +1,33 @@
+<div class="container">
+<div class="row justify-content-around">
+<div class="col-md-8 align-self-center" style="background-color:#8BC34A;">
 <h1 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h1>
 
-<div class="message" style="width: 400px;">
+<div class="message">
   <% @chats.each do |chat| %>
     <% if chat.user_id == current_user.id %>
-      <p style="text-align: right;"><%= chat.message %></p>
+    <div class="clearfix mb-2">
+    	<div class="float-right">
+    		<%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size:'50x50'%>
+    	</div>
+      <p style="text-align: right;" class="float-right bg-info rounded mr-3"><%= chat.message %></p>
+  </div>
     <% else %>
-      <p style="text-align: left;"><%= chat.message %></p>
+    <div class="clearfix mb-2">
+    	<div class="float-left">
+    		<%= attachment_image_tag current_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg" %>
+    	</div>
+      <p style="text-align: left;" class="float-left bg-warning rounded ml-3"><%= chat.message %></p>
+    </div>
     <% end %>
   <% end %>
 </div>
 
+
 <form>
 <input type="text" class="post">
 </form>
+
+</div>
+</div>
+</div>
