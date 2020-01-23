@@ -1,43 +1,23 @@
+<div class="card">
+  <%= attachment_image_tag user, :profile_image, :fill, 150, 150, format:'jpeg', class: "w-50 mx-auto d-block rounded-circle mt-3" , fallback: "no_image.jpg" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= user.name %></h5>
+    <p class="card-text"><%= user.introduction %></p>
+    <%= link_to "#{user.followings.count} フォロー", followings_user_path(user) %>
+    <%= link_to "#{user.followers.count} フォロワー", followers_user_path(user) %><br>
+    <%= render 'relationships/follow_button', user: user %>
+    <!-- チャット機能リンク -->
+     <% if current_user != user %>
+      <%= link_to 'メッセージを送る', chat_path(user.id), class: 'btn btn-success active my-2' %>
+     <% end %>
 
-      <div>
-        <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format:'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
-      </div>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th>name</th>
-            <th><%= user.name %></th>
-         </tr>
-          <tr>
-            <th>introduction</th>
-            <th><%= user.introduction %></th>
-          </tr>
-
-　　　　　<% if user == current_user %>
-          <tr>
-            <th><%= link_to "お気に入り楽曲", clips_path(user) %></th>
-          </tr>
-          <% end %>
-
-          <tr>
-            <th>フォローしている</th>
-            <th><%= link_to "#{user.followings.count} フォロー", followings_user_path(user) %></th>
-          </tr>
-          <tr>
-            <th>フォローされている</th>
-            <th><%= link_to "#{user.followers.count} フォロー", followers_user_path(user) %></th>
-          </tr>
-        </tbody>
-      </table>
-
-      <% if user == current_user %>
-      <button type="button" class="btn btn-outline-secondary btn-block">
+                <% if user == current_user %>
+      <button type="button" class="btn btn-outline-secondary btn-block my-2">
         <%= link_to 'ユーザー編集',edit_user_path(current_user.id) %>
       </button>
+     <button type="button" class="btn btn-outline-secondary btn-block my-2">
+      <%= link_to '登録情報変更', edit_user_registration_path %>
+      </button>
      <% end %>
-
-     <!-- チャット機能リンク -->
-     <% if current_user != user %>
-      <%= link_to 'チャットを始める', chat_path(user.id) %>
-     <% end %>
-
+  </div>
+</div>
