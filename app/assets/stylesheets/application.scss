@@ -16,3 +16,9 @@
 
 @import "bootstrap";
 @import "font-awesome";
+
+.jumbotron {
+  background-image: image-url("rec2.png");
+  background-size: cover;
+  background-position: center 25%;
+}

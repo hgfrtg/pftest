@@ -15,6 +15,9 @@ class MusicsController < ApplicationController
     @music_comment = MusicComment.new
   end
 
+  def about
+  end
+
   # GET /musics/new
   def new
     @music = Music.new

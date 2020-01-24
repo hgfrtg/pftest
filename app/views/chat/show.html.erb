@@ -1,5 +1,17 @@
 <div class="container">
 <div class="row justify-content-around">
+	<div class="col-md-4">
+		<div class="card">
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format:'jpeg', class: "w-50 mx-auto d-block rounded-circle mt-3" , fallback: "no_image.jpg" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @user.name %></h5>
+    <p class="card-text"><%= @user.introduction %></p>
+    <%= link_to "#{@user.followings.count} フォロー", followings_user_path(@user) %>
+    <%= link_to "#{@user.followers.count} フォロワー", followers_user_path(@user) %><br>
+    <%= render 'relationships/follow_button', user: @user %>
+	</div>
+    </div>
+    </div>
 <div class="col-md-8 align-self-center" style="background-color:#8BC34A;">
 <h1 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h1>
 
@@ -15,7 +27,7 @@
     <% else %>
     <div class="clearfix mb-2">
     	<div class="float-left">
-    		<%= attachment_image_tag current_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg" %>
+    		<%= attachment_image_tag current_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:'50x50' %>
     	</div>
       <p style="text-align: left;" class="float-left bg-warning rounded ml-3"><%= chat.message %></p>
     </div>
