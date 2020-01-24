@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'musics#index'
+  get '/home/about', to: 'musics#about'
   get '/search', to: 'search#search'
   get 'chat/:id' => 'chat#show', as: 'chat'
   resources :musics do

@@ -1,7 +1,7 @@
 <ul class="list-unstyled">
   <% users.each do |user| %>
   <li class="media mb-3">
-    <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg",class: "mr-3" %>
+    <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg",class: "mr-3", size:'100x100' %>
     <div class="media-body">
       <h5><%= link_to user.name, user, class: "user_#{user.id}" %></h5>
       <p><%= user.introduction %><p>
