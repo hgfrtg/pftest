@@ -5,7 +5,8 @@ class MusicsController < ApplicationController
   # GET /musics
   # GET /musics.json
   def index
-    @musics = Music.page(params[:page])
+    @musics = Music.order("created_at DESC").page(params[:page])
+    @randmusics = Music.order("RANDOM()").limit(2)
   end
 
   # GET /musics/1
