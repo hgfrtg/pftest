@@ -1,7 +1,7 @@
 <% if @model == 'user' %>
-  <h3>Users search for '<%= @content %>'</h3>
-  <%= render 'users/userslist', users: @records %>
+	  <h3>Users search for '<%= @content %>'</h3>
+	  <%= render 'users/userslist', users: @records %>
   <% else @model == 'musics' %>
-  <h3>Musics search for '<%= @content %>'</h3>
-    <%= render 'musics/musicslist', musics: @records %>
-  <% end %>
+	  <h3>Musics search for '<%= @content %>'</h3>
+	  <%= render 'musics/musicslist', musics: @records %>
+<% end %>

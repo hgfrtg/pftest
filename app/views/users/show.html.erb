@@ -11,27 +11,25 @@
 
 <div class="container">
   <nav aria-label="breadcrumb">
-  <ol class="breadcrumb" style="background-color:#604040;">
-    <li class="breadcrumb-item"><%= link_to 'トップ', root_path %></li>
-    <li class="breadcrumb-item"><%= link_to 'ユーザー', users_path %></li>
-    <li class="breadcrumb-item active" aria-current="page"><%= @user.name %></li>
-  </ol>
-</nav>
-<div class="row">
-
-<div class="col-md-8">
-    <%= render 'musics/musicslist', musics: @musics%>
-</div>
-
-  <div class="col-md-4">
-    <%= render 'layouts/search_form' %>
-    <%= render 'users/info',{user: @user} %>
+    <ol class="breadcrumb" style="background-color:#604040;">
+      <li class="breadcrumb-item"><%= link_to 'トップ', root_path %></li>
+      <li class="breadcrumb-item"><%= link_to 'ユーザー', users_path %></li>
+      <li class="breadcrumb-item active" aria-current="page"><%= @user.name %></li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-md-8">
+      <%= render 'musics/musicslist', musics: @musics%>
+    </div>
+    <div class="col-md-4">
+      <%= render 'layouts/search_form' %>
+      <%= render 'users/info',{user: @user} %>
+    </div>
   </div>
 </div>
-</div>
 
 
-      <script>
+<script>
   audiojs.events.ready(function() {
     var as = audiojs.createAll();
   });

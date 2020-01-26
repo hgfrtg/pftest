@@ -13,51 +13,39 @@
     </div>
   </div>
   <div class="col-md-8 align-self-center" style="background-color:#8BC34A;">
+    <%= paginate @chats %>
     <h1 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h1>
-
     <div class="message">
       <% @chats.each do |chat| %>
       <div class="row">
-
         <% if chat.user_id == current_user.id %>
-        <div class="col-6 offset-6">
-          <div class="clearfix mb-2">
-           <div class="float-right">
-
-            <%= attachment_image_tag current_user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size:'50x50'%><br>
-            <%= current_user.name %>
+        <div class="col-6 offset-6 align-self-right">
+          <p style="text-align: right">
+            <%= current_user.name %></p>
+            <p style="text-align: right;" class="float-right bg-info">
+              <%= chat.message %></p>
+            </div>
+            <% else %>
+            <div class="col-6">
+              <div class="clearfix mb-2">
+               <div class="float-left">
+                <p style="text-align: left">
+                  <%= @user.name %></p>
+                  <p style="text-align: left;" class="float-left bg-warning"><%= chat.message %></p>
+                </div>
+              </div>
+            </div>
+            <% end %>
           </div>
-          <p style="text-align: right;" class="float-right bg-info rounded mr-3"><%= chat.message %></p>
-
-
+          <% end %>
         </div>
-      </div>
-      <% else %>
-
-      <div class="col-6">
-        <div class="clearfix mb-2">
-         <div class="float-left">
-          <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:'50x50' %><br>
-          <%= @user.name %>
-
-          <p style="text-align: left;" class="float-left bg-warning rounded ml-3"><%= chat.message %></p>
+        <div class="col align-self-end">
+          <textarea class="post" rows="3" cols="65">
+          </textarea><br>
+          <button type="submit" id="chat_post">
+            送信する
+          </button>
         </div>
       </div>
     </div>
-    <% end %>
   </div>
-  <% end %>
-</div>
-
-
-
-<textarea class="post">
-</textarea>
-<button type="submit" id="chat_post">
-  送信する
-</button>
-
-
-</div>
-</div>
-</div>
