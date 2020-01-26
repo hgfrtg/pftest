@@ -8,34 +8,30 @@
 
 
 <div class="container" style="background-color:#FFFFFF;">
-<div class="row">
-
-<div class="col-md-8">
-  <ul class="list-unstyled">
-  	  <h2>お気に入りリスト</h2>
-
-    <% @clips.each do |clip| %>
-      <% music = Music.find(clip.music_id) %>
-      <li class="media mb-3">
-      	<%= attachment_image_tag music, :jacket_image, :fill, 100, 100, fallback: "no_image.jpg" %>
-      	<div class="media-body">
-            <h5><%= link_to music.title, music_path(music) %></h5>
-            <p><%= audio_tag music.audio %></p>
-            <%= link_to "お気に入り解除",music_add_path(music),method: :delete %>
-    <% end %>
+  <div class="row">
+    <div class="col-md-8">
+      <ul class="list-unstyled">
+       <h2>お気に入りリスト</h2>
+       <% @clips.each do |clip| %>
+       <% music = Music.find(clip.music_id) %>
+       <li class="media mb-3">
+         <%= attachment_image_tag music, :jacket_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+         <div class="media-body">
+          <h5><%= link_to music.title, music_path(music) %></h5>
+          <p><%= audio_tag music.audio %></p>
+          <%= link_to "お気に入り解除",music_add_path(music),method: :delete %>
+          <% end %>
+        </div>
+      </li>
+    </ul>
     </div>
-    </li>
-</ul>
-</div>
-
     <div class="col-md-4" style="background-color:#FFFFFF;">
       <%= render 'layouts/search_form' %>
     </div>
-
+  </div>
 </div>
-</div>
 
-      <script>
+<script>
   audiojs.events.ready(function() {
     var as = audiojs.createAll();
   });

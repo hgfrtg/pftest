@@ -27,26 +27,26 @@
 
 
 
-        <!-- いいね機能 -->
-        <% if user_signed_in? %>
-          <div class="favorite-zone my-2">
-            <%= render 'musics/like', music: music%>
-          </div>
-          <div class="clip-zone">
-                <% if !Clip.exists?(user_id:current_user.id,music_id:music.id) %>
-                <%= link_to "お気に入り",music_add_path(music),method: :post, class: "btn btn-outline-primary mb-2 my-2" %>
-                <% else %>
-                <%= link_to "お気に入り解除",music_add_path(music),method: :delete, class: "btn btn-primary active mb-2 my-2" %>
-                <% end %>
-           </div>
-        <% end %>
+<!-- いいね機能 -->
+<% if user_signed_in? %>
+<div class="favorite-zone my-2">
+  <%= render 'musics/like', music: music%>
+</div>
+<div class="clip-zone">
+  <% if !Clip.exists?(user_id:current_user.id,music_id:music.id) %>
+  <%= link_to "お気に入り",music_add_path(music),method: :post, class: "btn btn-outline-primary mb-2 my-2" %>
+  <% else %>
+  <%= link_to "お気に入り解除",music_add_path(music),method: :delete, class: "btn btn-primary active mb-2 my-2" %>
+  <% end %>
+</div>
+<% end %>
 
 
 
 
 
 
-            <% if music.user == current_user %>
-            <%= link_to '編集', edit_music_path(music), class: 'btn btn-info text-dark mr-2 my-1' %>
-            <%= link_to '削除', music, method: :delete, data: { confirm: '削除してもよろしいですか?' }, class: 'btn btn-danger text-light my-1' %>
-            <% end %>
+<% if music.user == current_user %>
+<%= link_to '編集', edit_music_path(music), class: 'btn btn-info text-dark mr-2 my-1' %>
+<%= link_to '削除', music, method: :delete, data: { confirm: '削除してもよろしいですか?' }, class: 'btn btn-danger text-light my-1' %>
+<% end %>

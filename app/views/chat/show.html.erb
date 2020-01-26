@@ -15,46 +15,37 @@
   <div class="col-md-8 align-self-center" style="background-color:#8BC34A;">
     <%= paginate @chats %>
     <h1 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h1>
-
     <div class="message">
       <% @chats.each do |chat| %>
       <div class="row">
-
         <% if chat.user_id == current_user.id %>
         <div class="col-6 offset-6 align-self-right">
-            <p style="text-align: right">
-              <%= current_user.name %></p>
-          <p style="text-align: right;" class="float-right bg-info">
-            <%= chat.message %></p>
-      </div>
-      <% else %>
-
-      <div class="col-6">
-        <div class="clearfix mb-2">
-         <div class="float-left">
-          <p style="text-align: left">
-          <%= @user.name %></p>
-
-          <p style="text-align: left;" class="float-left bg-warning"><%= chat.message %></p>
+          <p style="text-align: right">
+            <%= current_user.name %></p>
+            <p style="text-align: right;" class="float-right bg-info">
+              <%= chat.message %></p>
+            </div>
+            <% else %>
+            <div class="col-6">
+              <div class="clearfix mb-2">
+               <div class="float-left">
+                <p style="text-align: left">
+                  <%= @user.name %></p>
+                  <p style="text-align: left;" class="float-left bg-warning"><%= chat.message %></p>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+        <div class="col align-self-end">
+          <textarea class="post" rows="3" cols="65">
+          </textarea><br>
+          <button type="submit" id="chat_post">
+            送信する
+          </button>
         </div>
       </div>
     </div>
-    <% end %>
   </div>
-  <% end %>
-</div>
-
-
-
-<div class="col align-self-end">
-<textarea class="post" rows="3" cols="65">
-</textarea><br>
-<button type="submit" id="chat_post">
-  送信する
-</button>
-</div>
-
-
-</div>
-</div>
-</div>

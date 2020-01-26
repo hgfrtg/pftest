@@ -5,14 +5,14 @@
     <div class="media-body">
       <h5><%= link_to music.title, music %></h5>
       <p><%= audio_tag music.audio %><p>
-                  <div class="favorite-zone">
-                        <% if user_signed_in? %>
-                    <%= render 'musics/like', music: music%>
-                <% end %>
-                <i class="fa fa-commenting-o mr-1"></i><%= music.music_comments.count %>
-                 </div>
-    </div>
-  </li>
-  <% end %>
-</ul>
-<%= paginate musics %>
+        <div class="favorite-zone">
+          <% if user_signed_in? %>
+          <%= render 'musics/like', music: music%>
+          <% end %>
+          <i class="fa fa-commenting-o mr-1"></i><%= music.music_comments.count %>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+  <%= paginate musics %>

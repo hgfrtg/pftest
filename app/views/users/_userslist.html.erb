@@ -6,8 +6,8 @@
       <h5><%= link_to user.name, user, class: "user_#{user.id}" %></h5>
       <p><%= user.introduction %><p>
         作品数<i class="fa fa-music fa-fw"></i><%= user.musics.count %>
-    </div>
+      </div>
   </li>
   <% end %>
 </ul>
-<%= paginate users %>
+  <%= paginate users %>
