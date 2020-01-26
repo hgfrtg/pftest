@@ -72,6 +72,8 @@ gem 'audiojs-rails'
 gem 'devise'
 gem "font-awesome-rails"
 gem 'kaminari'
+gem 'rails_admin'
+gem 'cancancan'
 
 
 
