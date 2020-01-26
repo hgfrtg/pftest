@@ -14,10 +14,10 @@ $(function() {
       }
     }
   })
-  $(document).on('keypress', '.post', function(e) {
-    if (e.keyCode === 13) {
+  $(document).on('click', '#chat_post', function(e) {
+
       app.perform("create", {data: $('.post').val(), current_user_id: $('#room').data('user')});
       $('.post').val('');
-    }
+
   })
 })
