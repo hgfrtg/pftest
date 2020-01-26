@@ -18,6 +18,11 @@
 
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto">
+      <% if current_user.try(:admin?) %>
+      <li class="nav-item mr-3">
+        <span class="navbar-text"><%= link_to "管理画面", "/admin", :style=>"color:#333333;" %></span>
+      </li>
+      <% end %>
       <li class="nav-item mr-3">
         <span class="navbar-text"><%= link_to 'ホーム', root_path, :style=>"color:#333333;" %></span>
       </li>
