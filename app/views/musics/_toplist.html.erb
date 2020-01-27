@@ -5,7 +5,7 @@
       <%= audio_tag music.audio %>
     </div>
     <div class="card img-thumbnail">
-      <img class="card-img-top"  <%= attachment_image_tag music, :jacket_image, :fill, 200, 150, fallback: "no_image.jpg", size:'200x150' %>
+      <img class="card-img-top"  <%= attachment_image_tag music, :jacket_image, :fill, 200, 150, fallback: "no_music_image.png", size:'200x150' %>
     </div>
     <div class="card-body">
       <h5 class="card-text"><%= link_to music.title, music, :style=>"color:#333333;" %></h5>
