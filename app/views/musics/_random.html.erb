@@ -1,14 +1,12 @@
-<% randmusics.each do |music| %>
-<div class="card">
-  <div class="card-header" style="background-color:#4db6ac;">
-    <%= audio_tag music.audio %>
-  </div>
-  <div class="card img-thumbnail">
-    <img class="card-img-top"  <%= attachment_image_tag music, :jacket_image, :fill, 200, 150, fallback: "no_image.jpg", size:'200x150' %>
-
-  </div>
-  <div class="card-body">
-    <h5 class="card-text"><%= link_to music.title, music, :style=>"color:#333333;" %></h5>
-  </div>
-</div>
-<% end %>
+<h5 style="background-color:#4db6ac;">ランダム表示</h5>
+ <ul class="list-unstyled">
+  <% randmusics.each do |music| %>
+  <li class="media mb-3">
+    <%= attachment_image_tag music, :jacket_image, :fill, 50, 50, fallback: "no_music_image.png", size:'50x50' , class: 'align-self-center mr-3' %>
+    <div class="media-body">
+      <h5><%= link_to music.title, music %></h5>
+      <p><%= audio_tag music.audio %><p>
+      </div>
+    </li>
+    <% end %>
+ </ul>
