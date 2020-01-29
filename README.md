@@ -1,24 +1,42 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# **Pasdim*
+楽曲投稿・交流サイト
 
-Things you may want to cover:
 
-* Ruby version
+## Description
+気軽に投稿・視聴できる
+そして交流できるサイトを目指しました。
 
-* System dependencies
 
-* Configuration
+## Dependency
 
-* Database creation
+>  Ruby on rails (5.2.4) 
+>  HTML&CSS  
+>  Javascript
+>  
 
-* Database initialization
 
-* How to run the test suite
+## 実装機能
+>  いいね(非同期)
+>  お気に入り曲リスト
+>   フォロー・フォロワー
+>  コメント(非同期)
+>  検索機能
+>  1：1チャット(ActionCable)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Deploy
+> AWS
 
-* Deployment instructions
 
-* ...
+## Gem
+> refile
+> bootstrap4
+> jquery
+> kaminari
+> device
+> ransack
+> font-awesome-rails
+> rails_admin
+> cancancan
+> carrierwave
+> audiojs-rails
