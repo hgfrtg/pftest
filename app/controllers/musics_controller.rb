@@ -8,10 +8,10 @@ class MusicsController < ApplicationController
     @musics = Music.order("created_at DESC").page(params[:page])
     if Rails.env.production?
     # 本番コード
-    @randmusics = Music.order("RAND()").limit(2)
+    @randmusics = Music.order("RAND()").limit(5)
     else 
     # 開発環境コード
-    @randmusics = Music.order("RANDOM()").limit(2)
+    @randmusics = Music.order("RANDOM()").limit(5)
     end
   end
 
